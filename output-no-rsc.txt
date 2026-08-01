@@ -1,0 +1,71 @@
+[1/5] analyze client references...
+vite v8.2.0 building rsc environment for production...
+[2Ktransforming...✓ 21 modules transformed.
+rendering chunks...
+✓ built in 30ms
+[2/5] analyze server references...
+vite v8.2.0 building ssr environment for production...
+[2Ktransforming...
+[@tanstack/devtools-vite] Removed devtools code from: /src/routes/__root.tsx
+
+✓ 192 modules transformed.
+rendering chunks...
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - tanstack-start-core:import-protection (33%)
+  - tanstack-start-core:import-protection-transform-cache (18%)
+  - rsc:virtual-client-package (15%)
+  - rsc:scan-strip (6%)
+  - @tanstack/devtools:remove-devtools-on-build (6%)
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+✓ built in 3.93s
+[3/5] build rsc environment...
+vite v8.2.0 building rsc environment for production...
+[2Ktransforming...✓ 94 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/server/rsc/assets/getFoo-BgsubSnZ.js    9.91 kB │ gzip:  2.88 kB
+dist/server/rsc/index.js                   138.24 kB │ gzip: 29.69 kB
+
+✓ built in 140ms
+[4/5] build client environment...
+vite v8.2.0 building client environment for production...
+[2Ktransforming...
+[@tanstack/devtools-vite] Removed devtools code from: /src/routes/__root.tsx
+
+✓ 162 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/assets/globals-CmCcBo5l.css    5.04 kB │ gzip:   1.70 kB
+dist/client/assets/routes-tEprv-S9.js      0.39 kB │ gzip:   0.27 kB
+dist/client/assets/index-l9XSvQNp.js     345.92 kB │ gzip: 109.38 kB
+
+✓ built in 131ms
+[5/5] build ssr environment...
+vite v8.2.0 building ssr environment for production...
+[2Ktransforming...
+[@tanstack/devtools-vite] Removed devtools code from: /src/routes/__root.tsx
+
+✓ 201 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/server/assets/start-BPBo4SPP.js                            0.28 kB │ gzip:      0.21 kB
+dist/server/assets/_tanstack-start-manifest_v-Clu9pc7N.js       0.55 kB │ gzip:      0.31 kB
+dist/server/assets/routes-QIAe95nK.js                           0.83 kB │ gzip:      0.42 kB
+dist/server/assets/routes-ao6zA2kb.js                          24.06 kB │ gzip:      6.30 kB
+dist/server/assets/async-local-storage-CK6RWQ01.js             25.78 kB │ gzip:      6.56 kB
+dist/server/assets/createServerFn-B3uYK2Gz.js                  67.74 kB │ gzip:     18.38 kB
+dist/server/assets/server-NHX-pKcc.js                          77.04 kB │ gzip:     17.52 kB
+dist/server/assets/atom-D1MOzoCJ.js                            98.02 kB │ gzip:     23.75 kB
+dist/server/server.js                                         675.00 kB │ gzip:    137.96 kB
+dist/server/assets/router-ubY6pEQV.js                      79,338.61 kB │ gzip: 31,657.34 kB
+
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - vite:css-post (12%)
+  - vite:build-import-analysis (11%)
+  - vite:asset (11%)
+  - rsc:load-environment-module (10%)
+  - rsc:virtual:vite-rsc/assets-manifest (10%)
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+✓ built in 10.90s
