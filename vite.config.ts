@@ -21,20 +21,6 @@ const config = defineConfig({
     rsc(),
     viteReact(),
   ],
-  logLevel: "info",
-  environments: {
-    rsc: {
-      build: {
-        rolldownOptions: {
-          logLevel: "info",
-          experimental: {
-            attachDebugInfo: "simple",
-            chunkImportMap: true,
-          },
-        },
-      },
-    },
-  },
 });
 
 export default config;
