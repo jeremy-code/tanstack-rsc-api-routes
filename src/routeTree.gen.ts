@@ -8,79 +8,79 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root";
-import { Route as IndexRouteImport } from "./routes/index";
-import { Route as ApiBarRouteImport } from "./routes/api/bar";
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiBarRouteImport } from './routes/api/bar'
 
 const IndexRoute = IndexRouteImport.update({
-  id: "/",
-  path: "/",
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const ApiBarRoute = ApiBarRouteImport.update({
-  id: "/api/bar",
-  path: "/api/bar",
+  id: '/api/bar',
+  path: '/api/bar',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute;
-  "/api/bar": typeof ApiBarRoute;
+  '/': typeof IndexRoute
+  '/api/bar': typeof ApiBarRoute
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute;
-  "/api/bar": typeof ApiBarRoute;
+  '/': typeof IndexRoute
+  '/api/bar': typeof ApiBarRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  "/": typeof IndexRoute;
-  "/api/bar": typeof ApiBarRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/api/bar': typeof ApiBarRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/api/bar";
-  fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/api/bar";
-  id: "__root__" | "/" | "/api/bar";
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/api/bar'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/api/bar'
+  id: '__root__' | '/' | '/api/bar'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  ApiBarRoute: typeof ApiBarRoute;
+  IndexRoute: typeof IndexRoute
+  ApiBarRoute: typeof ApiBarRoute
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/";
-      path: "/";
-      fullPath: "/";
-      preLoaderRoute: typeof IndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
-    "/api/bar": {
-      id: "/api/bar";
-      path: "/api/bar";
-      fullPath: "/api/bar";
-      preLoaderRoute: typeof ApiBarRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/bar': {
+      id: '/api/bar'
+      path: '/api/bar'
+      fullPath: '/api/bar'
+      preLoaderRoute: typeof ApiBarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApiBarRoute: ApiBarRoute,
-};
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from "./router.tsx";
-import type { createStart } from "@tanstack/react-start";
-declare module "@tanstack/react-start" {
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
   interface Register {
-    ssr: true;
-    router: Awaited<ReturnType<typeof getRouter>>;
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
   }
 }
